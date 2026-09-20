@@ -3,7 +3,7 @@
 ## Reporting
 
 Report suspected vulnerabilities through GitHub's private advisory form on this
-repository, or to security@zecbit.io. Please do not open a public issue first.
+repository, or to security@zecbit.net. Please do not open a public issue first.
 
 ## What counts
 

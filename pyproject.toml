@@ -28,7 +28,7 @@ dev = ["jsonschema>=4.0", "pytest>=7", "ruff>=0.5", "mypy>=1.8"]
 zmd1 = "zmd1.cli:main"
 
 [project.urls]
-Homepage = "https://zecbit.io"
+Homepage = "https://zecbit.net"
 Source = "https://github.com/Zecbit-nft/zmd1"
 Specification = "https://github.com/Zecbit-nft/zmd1/blob/main/SPEC.md"
 
