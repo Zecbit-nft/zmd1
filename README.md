@@ -11,14 +11,38 @@ No dependencies outside the Python standard library. The specification is
 [SPEC.md](SPEC.md); conformance vectors for other implementations are in
 [`vectors/`](vectors/).
 
+Not on PyPI yet. Install from source:
+
 ```bash
-pip install zmd1
+pip install git+https://github.com/Zecbit-nft/zmd1
 ```
 
 ```bash
 zmd1 hash 'zmd1|zecbit-genesis|1'
 # zmd1|zecbit-genesis|1  MINIMAL  2564d2f0815a25524bdd956509f232445eaf5dce202988d683cd616b722487af
 ```
+
+## Status of the asset layer it builds on
+
+ZMD-1 describes metadata for custom assets under ZIP 226 and ZIP 227. **Those
+are drafts, and at the time of writing they are not scheduled for any Zcash
+network upgrade.** The transaction format they depend on was withdrawn, its
+successor states it need not carry custom assets, and the fee specification's
+asset clauses were removed.
+
+That does not make the design wrong, and the identity derivation here is
+testable today with no chain at all. It does mean anything built on ZMD-1 has a
+timeline nobody controls.
+
+For items that work on the Orchard pool as deployed, see
+[nscv](https://github.com/Zecbit-nft/nscv), published by the same organisation.
+It makes a different trade: it works now, and ownership is never public.
+
+The canonicalization advice differs between the two repositories, which looks
+like a contradiction and is not. ZMD-1 binds a **JSON document**, and JSON has
+many byte encodings of the same value, so it must fix one: RFC 8785. nscv binds
+**fixed-layout binary**, which has exactly one encoding already, so it hashes
+bytes as published and does not canonicalize at all.
 
 ## How an NFT gets its identity on Zcash
 
