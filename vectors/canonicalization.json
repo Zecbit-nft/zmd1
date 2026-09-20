@@ -1,0 +1,75 @@
+[
+  {
+    "label": "key order",
+    "document": {
+      "b": 1,
+      "a": 2
+    },
+    "canonical": "{\"a\":2,\"b\":1}",
+    "blake2b_256": "264a84ee9c449ee90c05c62a542cde93a8ea646394268de1a5be06433ce369f4",
+    "cid": "bafkreigtmjvmgcuh4332mqucgoz4nauzs5ugl6svbdscm7cucxdwv55hoi"
+  },
+  {
+    "label": "nested",
+    "document": {
+      "z": {
+        "b": [
+          1,
+          2
+        ],
+        "a": null
+      },
+      "a": true
+    },
+    "canonical": "{\"a\":true,\"z\":{\"a\":null,\"b\":[1,2]}}",
+    "blake2b_256": "59e0cd90a36ba5710100010aff9c348ea90b31f057ce49b75757c9e5b2bc4e2a",
+    "cid": "bafkreihhoqgrbfj36ro3vcs7z57vbqf4dxiakpf66zn6q7iwk2ykzsfoem"
+  },
+  {
+    "label": "utf16 surrogate ordering",
+    "document": {
+      "Ｚ": 2,
+      "𐀀": 1
+    },
+    "canonical": "{\"𐀀\":1,\"Ｚ\":2}",
+    "blake2b_256": "f39f2db92d0752ab32422c5049109afd8498e3817938142705c7df8287dbb03f",
+    "cid": "bafkreibjjecsivjgu725pl5rus2ixslyr46xjembavr4yo7jw52jsoh2li"
+  },
+  {
+    "label": "non-ascii kept literal",
+    "document": {
+      "a": "é"
+    },
+    "canonical": "{\"a\":\"é\"}",
+    "blake2b_256": "5ca6268f24073a53d31cf3851fbe59ff776e0623899c42edbf796502a1ca4379",
+    "cid": "bafkreiftucjknl2iqb72ssblf3quaecvoxnke3k3esz4bzqkpyw64zudwe"
+  },
+  {
+    "label": "control characters escaped",
+    "document": {
+      "a": "\n\t\"\\"
+    },
+    "canonical": "{\"a\":\"\\n\\t\\\"\\\\\"}",
+    "blake2b_256": "efdc0480d4386cfbf3d50f2af8c3c457de8afe7573ae71ff91fe20573ea1f425",
+    "cid": "bafkreib7gjj5r7okwgiaabnenivbrq6tg4maf7wt235vrw5fykdye63hdu"
+  },
+  {
+    "label": "empty containers",
+    "document": {
+      "a": {},
+      "b": []
+    },
+    "canonical": "{\"a\":{},\"b\":[]}",
+    "blake2b_256": "fce3b952a806d29ea9a267dbd9a18438312388bd54f96bc31363ded822b15f51",
+    "cid": "bafkreifo5oq6k2quib37rhrgzeynvv6psm7jha6pxdrt3x7wdartwkn6oy"
+  },
+  {
+    "label": "max safe integer",
+    "document": {
+      "n": 9007199254740991
+    },
+    "canonical": "{\"n\":9007199254740991}",
+    "blake2b_256": "d60a099eb40fc39f88d99e7b828f0afb3a1ff13e7b0ba5a5146b1f1436a063bb",
+    "cid": "bafkreihb3jemnjqit4doznhauisz4zmog6dleqqpkk5mzx4st3demdl3ie"
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "manifest": {
+    "schema_version": "zmd1",
+    "collection": {
+      "slug": "zecbit-genesis",
+      "name": "ZecBit Genesis",
+      "issuer_vk": "3b1f8c5d2a4e6079b8c1d2e3f405162738495a6b7c8d9e0f1a2b3c4d5e6f7081",
+      "network": "test"
+    },
+    "item": {
+      "index": 1,
+      "name": "Shielded #0001",
+      "description": "Genesis item, minimal-form descriptor."
+    },
+    "media": [
+      {
+        "type": "image",
+        "cid": "bafkreibapgwfgmcbaa4thlxnzkex3mnfrkl735e4vmctpyhoj4dh3ljoge",
+        "hash": "bc6aaa63b8317c403503cfa761d9772553c8e2b3d3b4ea664c913fe001bfeb20",
+        "mime": "image/svg+xml",
+        "bytes": 68,
+        "dimensions": {
+          "width": 120,
+          "height": 120
+        },
+        "role": "primary"
+      }
+    ],
+    "traits": [
+      {
+        "trait_type": "Palette",
+        "value": "Zcash Gold"
+      },
+      {
+        "trait_type": "Core",
+        "value": "Spine"
+      }
+    ],
+    "creator": {
+      "name": "ZecBit",
+      "sig": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "created_at": "2026-08-29T00:00:00Z"
+  },
+  "canonical_utf8": "{\"collection\":{\"issuer_vk\":\"3b1f8c5d2a4e6079b8c1d2e3f405162738495a6b7c8d9e0f1a2b3c4d5e6f7081\",\"name\":\"ZecBit Genesis\",\"network\":\"test\",\"slug\":\"zecbit-genesis\"},\"created_at\":\"2026-08-29T00:00:00Z\",\"creator\":{\"name\":\"ZecBit\",\"sig\":\"00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"},\"item\":{\"description\":\"Genesis item, minimal-form descriptor.\",\"index\":1,\"name\":\"Shielded #0001\"},\"media\":[{\"bytes\":68,\"cid\":\"bafkreibapgwfgmcbaa4thlxnzkex3mnfrkl735e4vmctpyhoj4dh3ljoge\",\"dimensions\":{\"height\":120,\"width\":120},\"hash\":\"bc6aaa63b8317c403503cfa761d9772553c8e2b3d3b4ea664c913fe001bfeb20\",\"mime\":\"image/svg+xml\",\"role\":\"primary\",\"type\":\"image\"}],\"schema_version\":\"zmd1\",\"traits\":[{\"trait_type\":\"Palette\",\"value\":\"Zcash Gold\"},{\"trait_type\":\"Core\",\"value\":\"Spine\"}]}",
+  "content_hash": "b8bb2bbac9ccb351584daca61f875f1010ee0ad6a292d504cfaf13951941fa00",
+  "manifest_cid": "bafkreibyb75cs2c6utb7dwir7ryrgwmeo4vijuodnowyexekub37s6rsoa",
+  "signing_digest": "297b287f12560fe5b1102be61f9bc4c6c8c067bf9cb6decc8221ce4e213a0c61",
+  "media_bytes_utf8": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"></svg>",
+  "media_hash": "bc6aaa63b8317c403503cfa761d9772553c8e2b3d3b4ea664c913fe001bfeb20",
+  "chain_context": {
+    "ik": "3b1f8c5d2a4e6079b8c1d2e3f405162738495a6b7c8d9e0f1a2b3c4d5e6f7081",
+    "network": "test"
+  },
+  "descriptors": {
+    "minimal": {
+      "asset_desc": "zmd1|zecbit-genesis|1",
+      "asset_desc_hash": "2564d2f0815a25524bdd956509f232445eaf5dce202988d683cd616b722487af"
+    },
+    "full": {
+      "asset_desc": "zmd1|zecbit-genesis|1|bafkreibyb75cs2c6utb7dwir7ryrgwmeo4vijuodnowyexekub37s6rsoa|b8bb2bbac9ccb351584daca61f875f1010ee0ad6a292d504cfaf13951941fa00",
+      "asset_desc_hash": "ca3579d2d92d75685979136fce02889f0158e32376902134496ab3b026d4c5a0"
+    }
+  }
+}

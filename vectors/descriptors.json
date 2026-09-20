@@ -1,0 +1,114 @@
+{
+  "valid": [
+    {
+      "asset_desc": "zmd1|zecbit-genesis|1",
+      "form": "MINIMAL",
+      "collection": "zecbit-genesis",
+      "index": 1,
+      "asset_desc_hash": "2564d2f0815a25524bdd956509f232445eaf5dce202988d683cd616b722487af"
+    },
+    {
+      "asset_desc": "zmd1|zecbit-genesis|10",
+      "form": "MINIMAL",
+      "collection": "zecbit-genesis",
+      "index": 10,
+      "asset_desc_hash": "e83bc891da073ff09d5f4caf303f16842500de7a0866c64cea74a85de220f2e0"
+    },
+    {
+      "asset_desc": "zmd1|g|0",
+      "form": "MINIMAL",
+      "collection": "g",
+      "index": 0,
+      "asset_desc_hash": "4aee66e238c09d181855ca41dcfce2c1c947362c47a1a784998097e2a3247a27"
+    },
+    {
+      "asset_desc": "zmd1|a-b-c|4294967295",
+      "form": "MINIMAL",
+      "collection": "a-b-c",
+      "index": 4294967295,
+      "asset_desc_hash": "e023f0cd255c05a31380f677f2a267d78d2274d82bfe819460df3ac9ef42da76"
+    },
+    {
+      "asset_desc": "zmd1|0|7",
+      "form": "MINIMAL",
+      "collection": "0",
+      "index": 7,
+      "asset_desc_hash": "25dde68f11974016eae126343f0b4f02d22a08929ed4a70826382842fc7cd9a9"
+    },
+    {
+      "asset_desc": "zmd1|zecbit-genesis|1|bafkreiazihlszbyzhzsaxhxn4o2osl7nuavzusdxekk7harweu7xv6kdxi|d96b378965e0938b665230f4f2aec9ba9badc50fb3cf600196acaf5ce206cf44",
+      "form": "FULL",
+      "collection": "zecbit-genesis",
+      "index": 1,
+      "manifest_cid": "bafkreiazihlszbyzhzsaxhxn4o2osl7nuavzusdxekk7harweu7xv6kdxi",
+      "content_hash": "d96b378965e0938b665230f4f2aec9ba9badc50fb3cf600196acaf5ce206cf44",
+      "asset_desc_hash": "dd011707874b792cb1ec2faddec7f893948d00f8d67fb5ebe8de7ab2f31859d0"
+    }
+  ],
+  "invalid": [
+    {
+      "asset_desc": "zmd2|g|1",
+      "reason": "tag is not zmd1"
+    },
+    {
+      "asset_desc": "ZMD1|g|1",
+      "reason": "tag is case sensitive"
+    },
+    {
+      "asset_desc": "zmd1|g",
+      "reason": "too few fields"
+    },
+    {
+      "asset_desc": "zmd1|g|1|x",
+      "reason": "four fields is neither form"
+    },
+    {
+      "asset_desc": "zmd1|g|01",
+      "reason": "index has a leading zero"
+    },
+    {
+      "asset_desc": "zmd1|g|-1",
+      "reason": "index is not a decimal integer"
+    },
+    {
+      "asset_desc": "zmd1|g|4294967296",
+      "reason": "index exceeds 2^32-1"
+    },
+    {
+      "asset_desc": "zmd1|Genesis|1",
+      "reason": "slug is not lowercase"
+    },
+    {
+      "asset_desc": "zmd1|-g|1",
+      "reason": "slug starts with a hyphen"
+    },
+    {
+      "asset_desc": "zmd1|g-|1",
+      "reason": "slug ends with a hyphen"
+    },
+    {
+      "asset_desc": "zmd1|a--b|1",
+      "reason": "slug has a doubled hyphen"
+    },
+    {
+      "asset_desc": "zmd1||1",
+      "reason": "slug is empty"
+    },
+    {
+      "asset_desc": "zmd1|g|1|QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG|0000000000000000000000000000000000000000000000000000000000000000",
+      "reason": "CIDv0 is not permitted"
+    },
+    {
+      "asset_desc": "zmd1|g|1|bafkreiabc234567|000000000000000000000000000000000000000000000000000000000000000",
+      "reason": "content hash is not 64 hex characters"
+    },
+    {
+      "asset_desc": "zmd1|g|1|bafkreiabc234567|AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "reason": "content hash is not lowercase"
+    },
+    {
+      "asset_desc": "zmd1|aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa|1",
+      "reason": "descriptor exceeds 256 bytes"
+    }
+  ]
+}

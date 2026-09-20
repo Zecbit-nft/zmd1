@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zecbit.net/schemas/zmd1/item-manifest.json",
+  "title": "ZMD-1 Item Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "collection",
+    "item",
+    "media",
+    "creator"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "zmd1"
+    },
+    "collection": {
+      "type": "object",
+      "required": [
+        "slug",
+        "name",
+        "issuer_vk",
+        "network"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]([a-z0-9]|-(?!-)){0,62}[a-z0-9]$|^[a-z0-9]$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "issuer_vk": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Issuance validating key, lowercase hex"
+        },
+        "network": {
+          "enum": [
+            "main",
+            "test"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "index",
+        "name"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 4096
+        }
+      },
+      "additionalProperties": true
+    },
+    "media": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "cid",
+          "hash",
+          "mime"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "image",
+              "animation",
+              "audio",
+              "video",
+              "model",
+              "document"
+            ]
+          },
+          "cid": {
+            "type": "string",
+            "pattern": "^b[a-z2-7]{1,111}$"
+          },
+          "hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "BLAKE2b-256 of the exact media bytes"
+          },
+          "mime": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "dimensions": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "role": {
+            "enum": [
+              "primary",
+              "thumbnail",
+              "full",
+              "extra"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "traits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "trait_type",
+          "value"
+        ],
+        "properties": {
+          "trait_type": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "display": {
+            "enum": [
+              "string",
+              "number",
+              "percentage",
+              "date",
+              "boost",
+              "hidden"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "creator": {
+      "type": "object",
+      "required": [
+        "sig"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "sig": {
+          "type": "string",
+          "pattern": "^[0-9a-f]+$",
+          "description": "IssueAuthSig by the issuance key over the signing digest (see canonicalization rules)"
+        }
+      },
+      "additionalProperties": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC, RFC 3339; informational only"
+    }
+  },
+  "additionalProperties": true
+}
